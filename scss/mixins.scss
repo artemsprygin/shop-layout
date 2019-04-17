@@ -5,3 +5,23 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
+
+@mixin btn($bg: $black, $fs: 9px, $lh: 13px, $ls: 0.54px, $br: 39px, $w: 114px, $clr: $white) {
+  width: $w;
+  color: $clr;
+  background: $bg;
+  line-height: $lh;
+  letter-spacing: $ls;
+  border-radius: $br;
+  font-size: $fs;
+  padding: 13px 0; //так как lh = 13px * 3 = 39px высота кнопки
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 25px 0;
+  text-decoration: none;
+  @content;
+  &:hover {
+    background-color: lighten($bg, 15%);
+  }
+}
