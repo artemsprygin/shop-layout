@@ -37,24 +37,56 @@
   }
 }
 
+.banner-left {
+  padding: 35px 0;
+  background: url('../img/banner2.jpg') right center no-repeat #d7dbd5;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+    .banner__information {
+      margin-right: 0;
+      margin-left: 70px;
+      a {
+        $values: (bg: $black, fs:14px, lh:23px, ls:0.7px, w:205px, br:70px, clr:$white);
+        @include btn($values...) {
+          padding: 23px 0;
+          margin: 30px auto 0;
+        }
+      }
+    }
+}
+
 @media (max-width: 1100px) {
   .banner {
     background-position: -150px 0;
+    .banner__information {
+      margin-left: 0;
+    }
   }
-
-  .banner__information {
-    margin-right: 0;
+  .banner-left {
+    background-position: -150px 0;
+    .banner__information {
+      margin-right: 0;
+    }
   }
 }
 
 @media (max-width: 1030px) {
   .banner {
     background:#00b7d9;
+    .banner__information {
+      flex-basis: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
   }
-  .banner__information {
-    flex-basis: 100%;
-    padding: 0 10px;
-    box-sizing: border-box;
+  .banner-left {
+    background:#d7dbd5;
+    .banner__information {
+      flex-basis: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
   }
 }
 
@@ -64,12 +96,17 @@
       margin-right: 0;
     }
   }
+  .banner-left {
+    .banner__information {
+      margin-right: 0;
+    }
+  }
 }
 
 @media (max-width: 320px) {
   .banner {
     .banner__information {
-      margin-right: -40px;
+      margin-right: 0px;
       .banner__title {
         font-size: 22px;
       }
@@ -77,6 +114,35 @@
         font-size: 14px;
         margin: 15px 30px;
       }
+      a {
+        $values: (bg: $white, fs:12px, lh:20px, ls:2.16px, w:150px, br:60px, clr:$black);
+        @include btn($values...) {
+          padding: 20px 0;
+          margin: 30px auto 0;
+        }
+      }
+    }
+
+  }
+  .banner-left {
+    .banner__information {
+      margin-right: 0px;
+      margin-left: -35px;
+      .banner__title {
+        font-size: 22px;
+      }
+      p {
+        font-size: 14px;
+        margin: 15px 30px;
+      }
+      a {
+         $values: (bg: $black, fs:14px, lh:23px, ls:0.7px, w:150px, br:70px, clr:$white);
+         @include btn($values...) {
+           padding: 23px 0;
+           margin: 30px auto 0;
+         }
+       }
+
     }
 
   }
