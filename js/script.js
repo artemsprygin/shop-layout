@@ -40,4 +40,14 @@ $(document).ready(function () {
             }
         }
     })
+
+    const iconSearch = document.querySelector('.icons__search');
+    const body = document.querySelector('body');
+    iconSearch.addEventListener('click', function (e) {
+        e.stopPropagation();
+        this.classList.add('icons__search-active');
+    });
+    body.addEventListener('click', function (e) {
+        iconSearch.classList.remove('icons__search-active');
+    });
 });
